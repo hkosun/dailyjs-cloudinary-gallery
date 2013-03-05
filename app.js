@@ -18,9 +18,9 @@ var app = express();
 app.locals.title = "Alex's Awesome Gallery";
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 3003);
   app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
+  app.set('view engine', 'ejs');
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
@@ -31,7 +31,7 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
-  cloudinary.config({ cloud_name: 'YOURS', api_key: 'YOURS', api_secret: 'YOURS' });
+  cloudinary.config({ cloud_name: 'arimagroup', api_key: '752388626165597', api_secret: 'Hpf3bL4MYr8QdiwuTCR5fRpt1KM' });
 });
 
 app.locals.api_key = cloudinary.config().api_key;
